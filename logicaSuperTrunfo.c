@@ -1,43 +1,46 @@
 #include <stdio.h>
+#include <string.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+// Definição da struct Territorio
+// Armazena nome, cor do exército e quantidade de tropas
+struct Territorio {
+    char nome[30];
+    char cor[10];
+    int tropas;
+} Territorio;
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    // Array para armazenar 5 territórios
+    struct Territorio territorios[5];
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Entrada de dados para cada território
+    for (int i = 0; i < 5; i++) {
+        printf("=== Cadastro do Territorio %d ===\n", i + 1);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+        // Nome do território
+        printf("Digite o nome do territorio: ");
+        scanf(" %s", territorios[i].nome); // Lê o input
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+        // Cor do exército
+        printf("Digite a cor do exercito: ");
+        scanf(" %s", territorios[i].cor); // Lê o input
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+        // Quantidade de tropas
+        printf("Digite a quantidade de tropas: ");
+        scanf("%d", &territorios[i].tropas);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+        printf("\n");
+    }
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    // Exibição dos dados cadastrados
+    printf("\n=== Territorios Cadastrados ===\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Territorio %d:\n", i + 1);
+        printf("Nome: %s\n", territorios[i].nome);
+        printf("Cor do exercito: %s\n", territorios[i].cor);
+        printf("Quantidade de tropas: %d\n", territorios[i].tropas);
+        printf("--------------------------\n");
+    }
 
     return 0;
 }
